@@ -1,0 +1,128 @@
+html, body, h1, p, ul, li, div {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0 none;
+  display: block;
+  background: transparent;
+  text-decoration: inherit;
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  text-align: center;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: helvetica;
+  margin-bottom: 30px;
+}
+
+.board {
+  border: 1px solid black;
+  background: linear-gradient(rgba(240, 240, 240, 0.8), rgba(100, 100, 100, 0.8)),
+              url("./../img/jungle-background.jpg");
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  overflow: hidden;
+  transition: transform .5s;
+}
+
+li {
+  float: left;
+  width: 30px;
+  height: 30px;
+}
+
+.snake, .apple {
+  width: 28px;
+  height: 28px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px #000;
+}
+
+.snake {
+  border-radius: 12px;
+  border-color: #21610B;
+  background: linear-gradient(rgba(41, 236, 116, 0.5), rgba(24, 133, 66, 0.5)),
+              url("./../img/snake-background.jpg");
+}
+
+.apple {
+  border-radius: 10px 10px 20px 20px;
+  border-color: #8A0808;
+  position: relative;
+  background-image: linear-gradient(30deg , #FE2E2E, #B40404);
+}
+
+.apple:before {
+  content: "";
+  position: absolute;
+  bottom: 28px;
+  left: calc(50%);
+  width: 4px;
+  height: 10px;
+  background-color: brown;
+  transform: rotate(30deg);
+}
+
+.apple:after {
+  content: "";
+  position: absolute;
+  bottom: 17px;
+  left: 17px;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+}
+
+.game-over > .board {
+  position: relative;
+}
+
+.game-over > .board:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 20;
+}
+
+.game-over > .board:after {
+  content: "GAME OVER";
+  font-size: 80px;
+  color: #D8D8D8;
+  text-shadow: 0 0 10px #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+}
+
+p {
+  font-size: 30px;
+  font-weight: 800;
+  margin-top: 30px;
+}
+
+.score {
+  color: blue;
+}
