@@ -39,11 +39,11 @@
     }
 
     return false;
-  };
+  }
 
   function coordsDoNotContain (coords, target) {
     return !coordsContain(coords, target);
-  };
+  }
 
   var Game = window.Snake.Game = function (segments) {
     this.previousDir = "E";

@@ -37,6 +37,7 @@
 
   View.prototype.bindEvents = function () {
     $(document).on("keydown", function (e) {
+      e.preventDefault();
       this.game.turn(View.KEYS[e.which]);
     }.bind(this));
   };
